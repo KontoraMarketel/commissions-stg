@@ -100,7 +100,7 @@ async def main():
     )
     await minio_pool.start()
     
-    clickhoose_conn: AsyncClient =  await clickhouse_connect.get_async_client(
+    clickhoose_conn = await clickhouse_connect.get_async_client(
         host=CLICKHOUSE_HOST,
         port=CLICKHOUSE_PORT,
         username=CLICKHOUES_USERNAME,
