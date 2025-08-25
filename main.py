@@ -47,7 +47,7 @@ async def handle_message(msg, minio_pool: MinioClientPool, db_conn):
 
     logging.info(f"Start processing task {task_id}")
 
-    data = await download_from_minio(minio_key, MINIO_BUCKET, minio_key)
+    data = await download_from_minio(minio_pool, MINIO_BUCKET, minio_key)
 
     await process_data(db_conn, data, task_id, ts)
 
