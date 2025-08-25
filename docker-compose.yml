@@ -15,7 +15,7 @@ services:
       MINIO_BUCKET: ingests
       CLICKHOUSE_HOST: clickhouse
       CICKHOUSE_PORT: 8123
-      CLICKHOUES_USERNAME: admin
+      CLICKHOUSE_USER: admin
       CLICKHOUSE_PASSWORD: admin
       CLICKHOUSE_DB: default
     networks:
