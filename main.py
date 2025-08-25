@@ -41,6 +41,7 @@ semaphore = asyncio.Semaphore(CONCURRENT_TASKS)
 
 # Handle a single message
 async def handle_message(msg, minio_pool: MinioClientPool, db_conn):
+    logging.info(f"Received message: {msg}")
     task_id = msg["task_id"]
     minio_key = msg["minio_key"]
     ts = msg["ts"]
@@ -48,6 +49,7 @@ async def handle_message(msg, minio_pool: MinioClientPool, db_conn):
     logging.info(f"Start processing task {task_id}")
 
     data = await download_from_minio(minio_pool, MINIO_BUCKET, minio_key)
+    logging.info(f"Downloaded data from MinIO {data}")
 
     await process_data(db_conn, data, task_id, ts)
 
