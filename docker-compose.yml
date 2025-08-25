@@ -13,6 +13,7 @@ services:
       MINIO_ACCESS_KEY: minioadmin
       MINIO_SECRET_KEY: minioadmin
       MINIO_BUCKET: ingests
+      CLICKHOUSE_HOST: clickhouse
     networks:
       - global
 
