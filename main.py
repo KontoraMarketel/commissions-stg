@@ -19,7 +19,7 @@ logging.basicConfig(level=logging.INFO)
 # Kafka configuration
 BOOTSTRAP_SERVERS = os.getenv("KAFKA_BOOTSTRAP_SERVERS")
 CONSUMER_TOPIC = os.getenv("KAFKA_INGEST_COMMISSIONS_TASKS_TOPIC")
-PRODUCER_TOPIC = os.getenv("KAFKA_STG_COMMISSIONS_TOPIC")
+PRODUCER_TOPIC = os.getenv("KAFKA_MART_COMMISSIONS_TOPIC")
 
 # MinIO configuration
 MINIO_ENDPOINT = os.getenv("MINIO_ENDPOINT")

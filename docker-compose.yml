@@ -4,8 +4,8 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      KAFKA_INGEST_COMMISSIONS_TASKS_TOPIC: ingest-commissions-tasks
-      KAFKA_STG_COMMISSIONS_TOPIC: stg-commissions-tasks
+      KAFKA_INGEST_COMMISSIONS_TASKS_TOPIC: stg-commissions-tasks
+      KAFKA_MART_COMMISSIONS_TOPIC: mart-commissions-tasks
       KAFKA_PROCESS_DATA_TASKS_TOPIC: process-tasks
       KAFKA_CONSUMER_GROUP: commissions-ingestors-stg
       KAFKA_BOOTSTRAP_SERVERS: kafka-compose-kafka-broker-1:9092
