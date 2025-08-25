@@ -1,0 +1,21 @@
+services:
+  ingestor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      KAFKA_INGEST_COMMISSIONS_TASKS_TOPIC: ingest-commissions-tasks
+      KAFKA_STG_COMMISSIONS_TOPIC: stg-commissions-tasks
+      KAFKA_PROCESS_DATA_TASKS_TOPIC: process-tasks
+      KAFKA_CONSUMER_GROUP: commissions-ingestors
+      KAFKA_BOOTSTRAP_SERVERS: kafka-compose-kafka-broker-1:9092
+      MINIO_ENDPOINT: http://minio:9000
+      MINIO_ACCESS_KEY: minioadmin
+      MINIO_SECRET_KEY: minioadmin
+      MINIO_BUCKET: ingests
+    networks:
+      - global
+
+networks:
+  global:
+    external: true
