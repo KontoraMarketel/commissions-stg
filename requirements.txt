@@ -4,3 +4,4 @@ aiohttp~=3.12.14
 aiobotocore~=2.23.0
 types-aiobotocore-s3~=2.23.1
 clickhouse-connect~=0.8.7
+pandas~=2.3.2
